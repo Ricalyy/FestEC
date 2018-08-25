@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion 26
@@ -32,6 +33,13 @@ dependencies {
     //图标依赖
     compile 'com.joanzapata.iconify:android-iconify-ionicons:2.2.2'
     compile 'com.joanzapata.iconify:android-iconify-fontawesome:2.2.2'
+    //Fragment依赖
+    compile 'me.yokeyword:fragmentation:1.3.6'
+    compile 'me.yokeyword:fragmentation-swipeback:1.3.6'
+    //ButterKnife依赖
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
     testCompile 'junit:junit:4.12'
     compile project(':latte-annotations')
 }

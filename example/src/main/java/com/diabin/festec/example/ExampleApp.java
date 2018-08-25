@@ -1,6 +1,7 @@
 package com.diabin.festec.example;
 
 import android.app.Application;
+import android.util.Log;
 
 import com.diabin.latte.app.Latte;
 import com.diabin.latte.ec.icon.FontEcModule;
@@ -14,6 +15,7 @@ public class ExampleApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        Log.d("CC", "ExampleApp: ");
         Latte.init(this)
                 .withIcon(new FontAwesomeModule())
                 .withIcon(new FontEcModule())
