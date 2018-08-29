@@ -7,9 +7,9 @@ package com.diabin.latte.net;
 public enum HttpMethod {
     GET,
     POST,
-    POST_RAM,
+    POST_RAW,
     PUT,
-    PUT_RAM,
+    PUT_RAW,
     DELETE,
     UPLOAD
 }
