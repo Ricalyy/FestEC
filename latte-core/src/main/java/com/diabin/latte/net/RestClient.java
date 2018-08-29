@@ -1,10 +1,14 @@
 package com.diabin.latte.net;
 
+import android.content.Context;
+
 import com.diabin.latte.net.callback.IError;
 import com.diabin.latte.net.callback.IFailure;
 import com.diabin.latte.net.callback.IRequest;
 import com.diabin.latte.net.callback.ISuccess;
 import com.diabin.latte.net.callback.RequestCallbacks;
+import com.diabin.latte.ui.LatteLoader;
+import com.diabin.latte.ui.LoaderStyle;
 
 import java.util.Map;
 import java.util.WeakHashMap;
@@ -26,9 +30,12 @@ public class RestClient {
     private final IFailure FAILURE;
     private final IError ERROR;
     private final RequestBody BODY;
+    private final LoaderStyle LOADERSTYLE;
+    private final Context CONTEXT;
 
-    public RestClient(String url, Map<String, Object> params, IRequest request, ISuccess success, IFailure failure,
-                      IError error, RequestBody body) {
+    public RestClient(String url, Map<String, Object> params, IRequest request, ISuccess success,
+                      IFailure failure,
+                      IError error, RequestBody body, Context context, LoaderStyle loaderStyle) {
         this.URL = url;
         PARAMS.putAll(params);
         this.REQUEST = request;
@@ -36,6 +43,8 @@ public class RestClient {
         this.FAILURE = failure;
         this.ERROR = error;
         this.BODY = body;
+        this.CONTEXT = context;
+        this.LOADERSTYLE = loaderStyle;
     }
 
     public static RestClientBuilder builder() {
@@ -48,6 +57,10 @@ public class RestClient {
 
         if (REQUEST != null) {
             REQUEST.onRequestStart();
+        }
+
+        if (LOADERSTYLE != null) {
+            LatteLoader.showLoading(CONTEXT, LOADERSTYLE);
         }
 
         switch (method) {
@@ -77,7 +90,8 @@ public class RestClient {
                 REQUEST,
                 SUCCESS,
                 FAILURE,
-                ERROR
+                ERROR,
+                LOADERSTYLE
         );
     }
 
