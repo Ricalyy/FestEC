@@ -27,9 +27,11 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    //Android Support包
+    compile 'com.android.support:support-v4:26.0.0-alpha1'
     compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support:design:26.0.0-alpha1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-
     //图标依赖
     compile 'com.joanzapata.iconify:android-iconify-ionicons:2.2.2'
     compile 'com.joanzapata.iconify:android-iconify-fontawesome:2.2.2'
@@ -51,7 +53,7 @@ dependencies {
     compile 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'
     //Json依赖
     compile 'com.alibaba:fastjson:1.1.57.android'
-
     testCompile 'junit:junit:4.12'
     compile project(':latte-annotations')
+
 }
