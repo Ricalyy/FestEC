@@ -1,4 +1,4 @@
-package com.diabin.latte_;
+package com.diabin.latte;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.diabin.latte_.test", appContext.getPackageName());
+        assertEquals("com.diabin.latte.test", appContext.getPackageName());
     }
 }

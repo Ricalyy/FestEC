@@ -3,10 +3,9 @@ package com.diabin.latte.activities;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.ContentFrameLayout;
-import android.util.Log;
 
 import com.diabin.latte.delegate.LatteDelegate;
-import com.diabin.latte_.R;
+import com.diabin.latte.R;
 
 import me.yokeyword.fragmentation.SupportActivity;
 

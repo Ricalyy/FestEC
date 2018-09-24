@@ -1,4 +1,4 @@
-package com.diabin.latte.ui;
+package com.diabin.latte.ui.loader;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatDialog;
@@ -6,8 +6,8 @@ import android.view.Gravity;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.diabin.latte.util.DimenUtil;
-import com.diabin.latte_.R;
+import com.diabin.latte.util.dimen.DimenUtil;
+import com.diabin.latte.R;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.ArrayList;

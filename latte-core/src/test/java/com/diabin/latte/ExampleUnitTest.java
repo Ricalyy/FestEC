@@ -1,4 +1,4 @@
-package com.diabin.latte_;
+package com.diabin.latte;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.diabin.latte.ui;
+package com.diabin.latte.ui.loader;
 
 /**
  * Created by ${user} on 2018/8/29.

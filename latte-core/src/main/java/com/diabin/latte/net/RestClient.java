@@ -1,7 +1,6 @@
 package com.diabin.latte.net;
 
 import android.content.Context;
-import android.provider.MediaStore;
 
 import com.diabin.latte.net.callback.IError;
 import com.diabin.latte.net.callback.IFailure;
@@ -9,8 +8,8 @@ import com.diabin.latte.net.callback.IRequest;
 import com.diabin.latte.net.callback.ISuccess;
 import com.diabin.latte.net.callback.RequestCallbacks;
 import com.diabin.latte.net.download.DownloadHandler;
-import com.diabin.latte.ui.LatteLoader;
-import com.diabin.latte.ui.LoaderStyle;
+import com.diabin.latte.ui.loader.LatteLoader;
+import com.diabin.latte.ui.loader.LoaderStyle;
 
 import java.io.File;
 import java.util.Map;
@@ -21,7 +20,6 @@ import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
-import retrofit2.http.Multipart;
 
 /**
  * Created by huangchencong on 2018/8/26.

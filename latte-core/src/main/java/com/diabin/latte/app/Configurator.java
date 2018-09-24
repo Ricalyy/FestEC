@@ -14,12 +14,12 @@ import okhttp3.Interceptor;
 
 public class Configurator {
 
-    private static final HashMap<Object, Object> LATTE_CONFIGS = new HashMap<>();
+    private static final HashMap<Object, Object> latteCONFIGS = new HashMap<>();
     private static final ArrayList<IconFontDescriptor> ICONS = new ArrayList<>();
     private static final ArrayList<Interceptor> INTERCEPTORS = new ArrayList<>();
 
     private Configurator() {
-        LATTE_CONFIGS.put(ConfigType.CONFIG_READY.name(), false);
+        latteCONFIGS.put(ConfigType.CONFIG_READY.name(), false);
     }
 
     public static Configurator getInstance() {
@@ -27,7 +27,7 @@ public class Configurator {
     }
 
     final HashMap<Object, Object> getLatteConfigs() {
-        return LATTE_CONFIGS;
+        return latteCONFIGS;
     }
 
     private static class Holder {
@@ -36,7 +36,7 @@ public class Configurator {
 
     public final void configure() {
         initIcons();
-        LATTE_CONFIGS.put(ConfigType.CONFIG_READY.name(), true);
+        latteCONFIGS.put(ConfigType.CONFIG_READY.name(), true);
     }
 
     private void initIcons() {
@@ -54,24 +54,24 @@ public class Configurator {
     }
 
     public final Configurator withApiHost(String host) {
-        LATTE_CONFIGS.put(ConfigType.API_HOST, host);
+        latteCONFIGS.put(ConfigType.API_HOST, host);
         return this;
     }
 
     public final Configurator withInterceptor(Interceptor interceptor) {
         INTERCEPTORS.add(interceptor);
-        LATTE_CONFIGS.put(ConfigType.INTERCEPTOR, INTERCEPTORS);
+        latteCONFIGS.put(ConfigType.INTERCEPTOR, INTERCEPTORS);
         return this;
     }
 
     public final Configurator withInterceptors(ArrayList<Interceptor> interceptors) {
         INTERCEPTORS.addAll(interceptors);
-        LATTE_CONFIGS.put(ConfigType.INTERCEPTOR, INTERCEPTORS);
+        latteCONFIGS.put(ConfigType.INTERCEPTOR, INTERCEPTORS);
         return this;
     }
 
     private void checkConfiguration() {
-        final boolean isReady = (boolean) LATTE_CONFIGS.get(ConfigType.CONFIG_READY.name());
+        final boolean isReady = (boolean) latteCONFIGS.get(ConfigType.CONFIG_READY.name());
         if (!isReady) {
             throw new RuntimeException("Congfiguration is not ready, call configure");
         }
@@ -80,11 +80,11 @@ public class Configurator {
     @SuppressWarnings("unchecked")
     final <T> T getConfiguration(Object key) {
         checkConfiguration();
-        final Object value = LATTE_CONFIGS.get(key);
+        final Object value = latteCONFIGS.get(key);
         if (value == null) {
             throw new NullPointerException(key.toString() + " IS NULL");
         }
-        return (T) LATTE_CONFIGS.get(key);
+        return (T) latteCONFIGS.get(key);
     }
 
 }

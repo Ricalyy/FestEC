@@ -6,10 +6,9 @@ import com.diabin.latte.net.callback.IError;
 import com.diabin.latte.net.callback.IFailure;
 import com.diabin.latte.net.callback.IRequest;
 import com.diabin.latte.net.callback.ISuccess;
-import com.diabin.latte.ui.LoaderStyle;
+import com.diabin.latte.ui.loader.LoaderStyle;
 
 import java.io.File;
-import java.util.Map;
 import java.util.WeakHashMap;
 
 import okhttp3.MediaType;
