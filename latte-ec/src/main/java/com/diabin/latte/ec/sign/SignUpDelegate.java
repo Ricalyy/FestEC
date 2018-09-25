@@ -1,7 +1,6 @@
 package com.diabin.latte.ec.sign;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.util.Patterns;
 import android.view.View;
@@ -10,6 +9,8 @@ import android.widget.Toast;
 import com.diabin.latte.delegate.LatteDelegate;
 import com.diabin.latte.ec.R;
 import com.diabin.latte.ec.R2;
+
+import org.jetbrains.annotations.Nullable;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -47,6 +48,11 @@ public class SignUpDelegate extends LatteDelegate {
 //                    .post();
             Toast.makeText(getContext(), "验证通过", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @OnClick(R2.id.tv_link_sign_in)
+    void onClickLink() {
+        start(new SignInDelegate());
     }
 
     private boolean checkForm() {
