@@ -11,10 +11,14 @@ import com.diabin.latte.ec.launcher.LauncherScrollDelegate;
 import com.diabin.latte.ec.sign.ISignListener;
 import com.diabin.latte.ec.sign.SignInDelegate;
 import com.diabin.latte.ec.sign.SignUpDelegate;
+import com.diabin.latte.ui.launcher.ILauncherListener;
+import com.diabin.latte.ui.launcher.OnLauncherFinishTag;
 
 import org.jetbrains.annotations.Nullable;
 
-public class ExampleActivity extends ProxyActivity implements ISignListener {
+public class ExampleActivity extends ProxyActivity implements
+        ISignListener,
+        ILauncherListener {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,7 +31,7 @@ public class ExampleActivity extends ProxyActivity implements ISignListener {
 
     @Override
     public LatteDelegate setRootDelegate() {
-        return new SignInDelegate();
+        return new LauncherDelegate();
     }
 
     @Override
@@ -40,4 +44,19 @@ public class ExampleActivity extends ProxyActivity implements ISignListener {
         Toast.makeText(this, "注册成功", Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    public void onLauncherFinish(OnLauncherFinishTag tag) {
+        switch (tag) {
+            case SIGNED:
+                Toast.makeText(this, "用户登陆", Toast.LENGTH_SHORT).show();
+                startWithPop(new ExampleDelegate());
+                break;
+            case NOT_SIGNED:
+                Toast.makeText(this, "用户没登陆", Toast.LENGTH_SHORT).show();
+                startWithPop(new SignInDelegate());
+                break;
+            default:
+                break;
+        }
+    }
 }

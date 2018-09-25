@@ -49,7 +49,7 @@ public class SignInDelegate extends LatteDelegate {
                         @Override
                         public void onSuccess(String response) {
                             Log.d(TAG, "onSuccess: " + response);
-                            SignHandler.onSignIn(response,mISignListener);
+                            SignHandler.onSignIn(response, mISignListener);
                         }
                     })
                     .build()
