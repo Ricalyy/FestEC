@@ -1,3 +1,8 @@
 {
-  "key": "value"
+  "code": 0,
+  "message": "OK",
+  "data": {
+    "userId": 1,
+    "name": "源头"
+  }
 }

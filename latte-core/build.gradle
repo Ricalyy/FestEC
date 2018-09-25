@@ -53,7 +53,10 @@ dependencies {
     compile 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'
     //Json依赖
     compile 'com.alibaba:fastjson:1.1.57.android'
+    //GreenDao依赖
+    compile 'org.greenrobot:greendao:3.2.2'
+    compile 'org.greenrobot:greendao-generator:3.2.2'
+
     testCompile 'junit:junit:4.12'
     compile project(':latte-annotations')
-
 }

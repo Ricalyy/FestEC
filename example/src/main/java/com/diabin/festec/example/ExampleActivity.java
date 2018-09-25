@@ -1,7 +1,6 @@
 package com.diabin.festec.example;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 
 import com.diabin.latte.activities.ProxyActivity;
@@ -10,6 +9,8 @@ import com.diabin.latte.ec.launcher.LauncherDelegate;
 import com.diabin.latte.ec.launcher.LauncherScrollDelegate;
 import com.diabin.latte.ec.sign.SignInDelegate;
 import com.diabin.latte.ec.sign.SignUpDelegate;
+
+import org.jetbrains.annotations.Nullable;
 
 public class ExampleActivity extends ProxyActivity {
 
@@ -24,6 +25,6 @@ public class ExampleActivity extends ProxyActivity {
 
     @Override
     public LatteDelegate setRootDelegate() {
-        return new SignInDelegate();
+        return new SignUpDelegate();
     }
 }

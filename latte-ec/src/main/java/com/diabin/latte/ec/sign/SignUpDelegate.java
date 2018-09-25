@@ -2,6 +2,7 @@ package com.diabin.latte.ec.sign;
 
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
@@ -9,6 +10,8 @@ import android.widget.Toast;
 import com.diabin.latte.delegate.LatteDelegate;
 import com.diabin.latte.ec.R;
 import com.diabin.latte.ec.R2;
+import com.diabin.latte.net.RestClient;
+import com.diabin.latte.net.callback.ISuccess;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -20,6 +23,8 @@ import butterknife.OnClick;
  */
 
 public class SignUpDelegate extends LatteDelegate {
+
+    private static final String TAG = "SignUpDelegate";
 
     @BindView(R2.id.edit_sign_up_name)
     TextInputEditText mName = null;
@@ -35,17 +40,21 @@ public class SignUpDelegate extends LatteDelegate {
     @OnClick(R2.id.btn_sign_up)
     void onClickSignUp() {
         if (checkForm()) {
-//            RestClient.builder()
-//                    .url("sign_up")
-//                    .params("","")
-//                    .success(new ISuccess() {
-//                        @Override
-//                        public void onSuccess(String response) {
-//
-//                        }
-//                    })
-//                    .build()
-//                    .post();
+            RestClient.builder()
+                    .url("http://192.168.80.50:8080/RestDataServer/data/index_2_data.json")
+                    .params("name", mName.getText().toString())
+                    .params("email", mEmail.getText().toString())
+                    .params("phone", mPhone.getText().toString())
+                    .params("password", mPassword.getText().toString())
+                    .success(new ISuccess() {
+                        @Override
+                        public void onSuccess(String response) {
+                            Log.d(TAG, "onSuccess: " + response);
+                            SignHandler.onSignUp(response);
+                        }
+                    })
+                    .build()
+                    .post();
             Toast.makeText(getContext(), "验证通过", Toast.LENGTH_SHORT).show();
         }
     }

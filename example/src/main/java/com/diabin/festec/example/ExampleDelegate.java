@@ -1,7 +1,6 @@
 package com.diabin.festec.example;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Toast;
 
@@ -10,6 +9,8 @@ import com.diabin.latte.net.RestClient;
 import com.diabin.latte.net.callback.IError;
 import com.diabin.latte.net.callback.IFailure;
 import com.diabin.latte.net.callback.ISuccess;
+
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Created by huangchencong on 2018/8/26.
