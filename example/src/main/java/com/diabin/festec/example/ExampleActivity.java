@@ -1,6 +1,7 @@
 package com.diabin.festec.example;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.widget.Toast;
 
@@ -15,7 +16,6 @@ import com.diabin.latte.ec.sign.SignUpDelegate;
 import com.diabin.latte.ui.launcher.ILauncherListener;
 import com.diabin.latte.ui.launcher.OnLauncherFinishTag;
 
-import org.jetbrains.annotations.Nullable;
 
 public class ExampleActivity extends ProxyActivity implements
         ISignListener,
