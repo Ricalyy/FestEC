@@ -8,6 +8,7 @@ import com.diabin.latte.activities.ProxyActivity;
 import com.diabin.latte.delegate.LatteDelegate;
 import com.diabin.latte.ec.launcher.LauncherDelegate;
 import com.diabin.latte.ec.launcher.LauncherScrollDelegate;
+import com.diabin.latte.ec.main.EcBottomDelegate;
 import com.diabin.latte.ec.sign.ISignListener;
 import com.diabin.latte.ec.sign.SignInDelegate;
 import com.diabin.latte.ec.sign.SignUpDelegate;
@@ -49,7 +50,7 @@ public class ExampleActivity extends ProxyActivity implements
         switch (tag) {
             case SIGNED:
                 Toast.makeText(this, "用户登陆", Toast.LENGTH_SHORT).show();
-                startWithPop(new ExampleDelegate());
+                startWithPop(new EcBottomDelegate());
                 break;
             case NOT_SIGNED:
                 Toast.makeText(this, "用户没登陆", Toast.LENGTH_SHORT).show();
