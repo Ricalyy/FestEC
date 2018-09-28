@@ -1,7 +1,6 @@
 package com.diabin.festec.example;
 
 import android.app.Application;
-import android.util.Log;
 
 import com.diabin.latte.app.Latte;
 import com.diabin.latte.ec.database.DataBaseManager;
@@ -21,8 +20,8 @@ public class ExampleApp extends Application {
         Latte.init(this)
                 .withIcon(new FontAwesomeModule())
                 .withIcon(new FontEcModule())
-                .withApiHost("http://127.0.0.1/")
-                .withInterceptor(new DebugInterceptor("index", R.raw.test))
+                .withApiHost("http://192.168.80.50:8080/")
+                .withInterceptor(new DebugInterceptor("index", R.raw.good))
                 .configure();
         initStetho();
         DataBaseManager.getInstance().init(this);

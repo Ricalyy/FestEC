@@ -7,12 +7,19 @@ import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Toast;
 
 import com.diabin.latte.delegate.bottom.BottomItemDelegate;
 import com.diabin.latte.ec.R;
 import com.diabin.latte.ec.R2;
+import com.diabin.latte.net.RestClient;
+import com.diabin.latte.net.callback.ISuccess;
+import com.diabin.latte.ui.recycler.MultipleFields;
+import com.diabin.latte.ui.recycler.MultipleItemEntity;
 import com.diabin.latte.ui.refresh.RefreshHandler;
 import com.joanzapata.iconify.widget.IconTextView;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 
@@ -37,6 +44,20 @@ public class IndexDelegate extends BottomItemDelegate {
     @Override
     public void onBindView(Bundle savedInstanceState, View rootView) {
         mRefreshHandler = new RefreshHandler(mRefreshLayout);
+        RestClient.builder()
+                .url("RestDataServer/data/good.json")
+                .success(new ISuccess() {
+                    @Override
+                    public void onSuccess(String response) {
+                        final IndexDataConverter converter = new IndexDataConverter();
+                        converter.setJsonData(response);
+                        final ArrayList<MultipleItemEntity> list = converter.convert();
+                        final String field = list.get(1).getField(MultipleFields.TEXT);
+                        Toast.makeText(getContext(), field, Toast.LENGTH_LONG).show();
+                    }
+                })
+                .build()
+                .get();
     }
 
     private void initRefreshLayout() {
@@ -52,6 +73,7 @@ public class IndexDelegate extends BottomItemDelegate {
     public void onLazyInitView(@Nullable Bundle savedInstanceState) {
         super.onLazyInitView(savedInstanceState);
         initRefreshLayout();
+        mRefreshHandler.firstPage("RestDataServer/data/good.json");
     }
 
     @Override
