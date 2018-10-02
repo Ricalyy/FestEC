@@ -1,0 +1,11 @@
+{
+  "code": 0,
+  "message": "OK",
+  "data": {
+    "userId": 1,
+    "name": "盖茨比",
+    "avatar": "http://...",
+    "gender": "男",
+    "address": "西安"
+  }
+}

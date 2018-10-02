@@ -29,7 +29,7 @@ public class ExampleDelegate extends LatteDelegate {
 
     private void testRestClient() {
         RestClient.builder()
-                .url("http://192.168.80.50:8080/RestDataServer/data/good.json")
+                .url("https://127.0.0.1/index")
                 .loader(getContext())
                 .success(new ISuccess() {
                     @Override

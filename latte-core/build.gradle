@@ -29,7 +29,7 @@ dependencies {
     })
     //Android Support包
     compile 'com.android.support:support-v4:26.0.0-alpha1'
-    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
     compile 'com.android.support:design:26.0.0-alpha1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     //图标依赖
@@ -58,6 +58,9 @@ dependencies {
     compile 'org.greenrobot:greendao-generator:3.2.2'
     //RecyclerView依赖
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    //图片处理
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.github.bumptech.glide:okhttp3-integration:1.4.0@aar'
     testCompile 'junit:junit:4.12'
     compile project(':latte-annotations')
 }
