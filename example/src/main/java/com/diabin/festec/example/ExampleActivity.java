@@ -17,6 +17,8 @@ import com.diabin.latte.ec.sign.SignUpDelegate;
 import com.diabin.latte.ui.launcher.ILauncherListener;
 import com.diabin.latte.ui.launcher.OnLauncherFinishTag;
 
+import qiu.niorgai.StatusBarCompat;
+
 
 public class ExampleActivity extends ProxyActivity implements
         ISignListener,
@@ -29,6 +31,7 @@ public class ExampleActivity extends ProxyActivity implements
         if (actionBar != null) {
             actionBar.hide();
         }
+        StatusBarCompat.translucentStatusBar(this, true);
     }
 
     @Override

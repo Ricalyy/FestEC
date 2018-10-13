@@ -44,7 +44,7 @@ public class IndexDelegate extends BottomItemDelegate {
 
     @Override
     public void onBindView(Bundle savedInstanceState, View rootView) {
-        mRefreshHandler = RefreshHandler.create(mRefreshLayout, mRecyclerView, new IndexDataConverter(), null);
+        mRefreshHandler = RefreshHandler.create(mRefreshLayout, mRecyclerView, new IndexDataConverter());
     }
 
     private void initRefreshLayout() {

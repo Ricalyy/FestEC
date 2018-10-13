@@ -34,7 +34,7 @@ public class RefreshHandler implements SwipeRefreshLayout.OnRefreshListener, Bas
     }
 
     public static RefreshHandler create(SwipeRefreshLayout swipeRefreshLayout, RecyclerView recyclerView, DataConverter
-            converter, PagingBean bean) {
+            converter) {
         return new RefreshHandler(swipeRefreshLayout, recyclerView, converter, new PagingBean());
 
     }
