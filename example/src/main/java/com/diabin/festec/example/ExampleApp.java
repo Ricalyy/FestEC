@@ -23,6 +23,7 @@ public class ExampleApp extends Application {
                 .withApiHost("https://127.0.0.1")
                 .withInterceptor(new DebugInterceptor("index", R.raw.good))
                 .withInterceptor(new DebugInterceptor("user", R.raw.user))
+                .withInterceptor(new DebugInterceptor("sort_list", R.raw.sort_list_data))
                 .configure();
         initStetho();
         DataBaseManager.getInstance().init(this);
