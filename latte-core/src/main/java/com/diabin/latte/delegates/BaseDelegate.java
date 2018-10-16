@@ -1,4 +1,4 @@
-package com.diabin.latte.delegate;
+package com.diabin.latte.delegates;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

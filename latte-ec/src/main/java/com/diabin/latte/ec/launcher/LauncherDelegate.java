@@ -8,7 +8,7 @@ import android.view.View;
 import com.diabin.latte.app.AccountManager;
 import com.diabin.latte.app.IUserChecker;
 import com.diabin.latte.ec.R2;
-import com.diabin.latte.delegate.LatteDelegate;
+import com.diabin.latte.delegates.LatteDelegate;
 import com.diabin.latte.ec.R;
 import com.diabin.latte.ui.launcher.ILauncherListener;
 import com.diabin.latte.ui.launcher.OnLauncherFinishTag;

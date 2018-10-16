@@ -1,11 +1,11 @@
-package com.diabin.latte.delegate.bottom;
+package com.diabin.latte.delegates.bottom;
 
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Toast;
 
 import com.diabin.latte.R;
-import com.diabin.latte.delegate.LatteDelegate;
+import com.diabin.latte.delegates.LatteDelegate;
 
 /**
  * Created by huangchencong on 2018/9/26.

@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.diabin.latte.delegate.LatteDelegate;
+import com.diabin.latte.delegates.LatteDelegate;
 import com.diabin.latte.net.RestClient;
 import com.diabin.latte.net.callback.IError;
 import com.diabin.latte.net.callback.IFailure;

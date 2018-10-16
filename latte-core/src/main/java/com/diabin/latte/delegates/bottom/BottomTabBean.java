@@ -1,4 +1,4 @@
-package com.diabin.latte.delegate.bottom;
+package com.diabin.latte.delegates.bottom;
 
 /**
  * Created by huangchencong on 2018/9/26.

@@ -1,4 +1,4 @@
-package com.diabin.latte.delegate.bottom;
+package com.diabin.latte.delegates.bottom;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import android.widget.RelativeLayout;
 
 import com.diabin.latte.R;
 import com.diabin.latte.R2;
-import com.diabin.latte.delegate.LatteDelegate;
+import com.diabin.latte.delegates.LatteDelegate;
 import com.joanzapata.iconify.widget.IconTextView;
 
 import java.util.ArrayList;
