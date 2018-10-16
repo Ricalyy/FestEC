@@ -3,12 +3,10 @@ package com.diabin.latte.ui.banner;
 import android.content.Context;
 import android.support.v7.widget.AppCompatImageView;
 import android.view.View;
-import android.widget.ImageView;
 
 import com.bigkoo.convenientbanner.holder.Holder;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.diabin.latte.R;
 
 /**
  * Created by huangchencong on 2018/10/2.

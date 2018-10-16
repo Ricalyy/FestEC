@@ -5,8 +5,10 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
 
+import com.diabin.latte.delegate.LatteDelegate;
 import com.diabin.latte.ec.R;
 import com.diabin.latte.ec.main.sort.SortDelegate;
+import com.diabin.latte.ec.main.sort.content.ContentDelegate;
 import com.diabin.latte.ui.recycler.ItemType;
 import com.diabin.latte.ui.recycler.MultipleFields;
 import com.diabin.latte.ui.recycler.MultipleItemEntity;
@@ -55,7 +57,9 @@ public class SortRecyclerAdapter extends MultipleRecyclerAdapter {
                             notifyItemChanged(currentPosition);
                             mPrePosition = currentPosition;
 
-                            final int currentId = getData().get(currentPosition).getField(MultipleFields.ID);
+                            final int currentId = getData().get(currentPosition).getField
+                                    (MultipleFields.ID);
+                            showContent(currentId);
                         }
                     }
                 });
@@ -63,7 +67,8 @@ public class SortRecyclerAdapter extends MultipleRecyclerAdapter {
                 if (!isClicked) {
                     line.setVisibility(View.INVISIBLE);
                     name.setTextColor(ContextCompat.getColor(mContext, R.color.we_chat_black));
-                    itemView.setBackgroundColor(ContextCompat.getColor(mContext, R.color.item_background));
+                    itemView.setBackgroundColor(ContextCompat.getColor(mContext, R.color
+                            .item_background));
                 } else {
                     line.setVisibility(View.VISIBLE);
                     name.setTextColor(ContextCompat.getColor(mContext, R.color.app_main));
@@ -75,6 +80,18 @@ public class SortRecyclerAdapter extends MultipleRecyclerAdapter {
                 break;
             default:
                 break;
+        }
+    }
+
+    private void showContent(int contentId) {
+        final ContentDelegate delegate = ContentDelegate.newInstance(contentId);
+        switchContent(delegate);
+    }
+
+    private void switchContent(ContentDelegate delegate) {
+        final LatteDelegate contentDelegate = DELEGATE.findChildFragment(ContentDelegate.class);
+        if (contentDelegate != null) {
+            contentDelegate.replaceFragment(delegate, false);
         }
     }
 }
