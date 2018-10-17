@@ -8,7 +8,31 @@
     <title>本地测试</title>
 </head>
 <body>
+
 <h1>这是本地页面1</h1>
-<a href="second.html">跳转页面</a>
+
+<button id="test">测试事件</button>
+
+<script type="text/javascript">
+    var btn = document.getElementById("test");
+    btn.onclick = function () {
+        var command={
+            'action':'test'
+        };
+        alert("测试点击有效");
+        latte.event(JSON.stringify(command));
+    }
+
+</script>
+
+<!--<script type="text/javascript">-->
+<!--document.getElementById('test').onClick = function () {-->
+<!--var command = {-->
+<!--'action': 'test'-->
+<!--};-->
+<!--document.getElementById('field2').value = document.getElementById('field1').value;-->
+<!--latte.event(JSON.stringify(command));-->
+<!--};-->
+<!--</script>-->
 </body>
 </html>

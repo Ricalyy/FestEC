@@ -11,7 +11,7 @@ import android.webkit.WebView;
 
 public class WebViewInitializer {
 
-    @SuppressLint("NewApi")
+    @SuppressLint({"NewApi", "SetJavaScriptEnabled"})
     public WebView createWebView(WebView webView) {
         WebView.setWebContentsDebuggingEnabled(true);
         //不能横向滑动
@@ -29,6 +29,7 @@ public class WebViewInitializer {
         });
         //初始化WebSettings
         final WebSettings settings = webView.getSettings();
+        settings.setJavaScriptEnabled(true);
         final String ua = settings.getUserAgentString();
         settings.setUserAgentString(ua + "Latte");
         //隐藏缩放控件
