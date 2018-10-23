@@ -1,8 +1,10 @@
 package com.diabin.latte.delegates.web.event;
 
 import android.content.Context;
+import android.webkit.WebView;
 
 import com.diabin.latte.delegates.LatteDelegate;
+import com.diabin.latte.delegates.web.WebDelegate;
 
 /**
  * Created by 黄陈聪 on 2018/10/17.
@@ -11,11 +13,16 @@ public abstract class Event implements IEvent {
 
     private Context mContent = null;
     private String mAction = null;
-    private LatteDelegate mDelegate =null;
+    private WebDelegate mDelegate = null;
     private String mUrl = null;
+    private WebView mWebView = null;
 
     public Context getContext() {
         return mContent;
+    }
+
+    public WebView getWebView() {
+        return mDelegate.getWebView();
     }
 
     public void setContext(Context mContext) {
@@ -34,7 +41,7 @@ public abstract class Event implements IEvent {
         return mDelegate;
     }
 
-    public void setDelegate(LatteDelegate mDelegate) {
+    public void setDelegate(WebDelegate mDelegate) {
         this.mDelegate = mDelegate;
     }
 

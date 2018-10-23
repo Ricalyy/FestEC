@@ -30,7 +30,7 @@ public class EventManager {
     public Event createEvent(@NonNull String action) {
         final Event event = EVENTS.get(action);
         if (event == null) {
-            return new TestEvent();
+            return new UndefineEvent();
         }
         return event;
     }

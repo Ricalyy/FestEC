@@ -3,6 +3,7 @@ package com.diabin.festec.example;
 import android.app.Application;
 
 import com.diabin.latte.app.Latte;
+import com.diabin.festec.example.event.TestEvent;
 import com.diabin.latte.ec.database.DataBaseManager;
 import com.diabin.latte.ec.icon.FontEcModule;
 import com.diabin.latte.net.interceptors.DebugInterceptor;
@@ -25,6 +26,8 @@ public class ExampleApp extends Application {
                 .withInterceptor(new DebugInterceptor("user", R.raw.user))
                 .withInterceptor(new DebugInterceptor("sort_list_data", R.raw.sort_list_data))
                 .withInterceptor(new DebugInterceptor("sort_content_list", R.raw.sort_content_list))
+                .withJavascriptInterface("latte")
+                .withWebEvent("test", new TestEvent())
                 .configure();
         initStetho();
         DataBaseManager.getInstance().init(this);
